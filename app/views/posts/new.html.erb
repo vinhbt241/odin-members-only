@@ -1,7 +1,20 @@
-<%= render 'posts/header' %>
+<%= form_with model: @post do |form| %>
+  <div>
+    <%= form.label :title, "Title" %>
+    <br/>
+    <%= form.text_field :title%>
+  </div>
 
-NEW POST
-<br/>
+  <div>
+    <%= form.label :body, "Share your story here" %>
+    <br/>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
 <%= link_to "Cancel", root_path %>
 
-<%= render 'posts/footer' %>
